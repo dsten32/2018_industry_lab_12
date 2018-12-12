@@ -17,16 +17,15 @@ public class DynamicRectangleShape extends RectangleShape {
 	 * Default constructor that creates a RectangleShape instance whose instance
 	 * variables are set to default values.
 	 */
-	public DynamicRectangleShape(Color color) {
-		fX=DEFAULT_X_POS;
-		fY=DEFAULT_Y_POS;
-		fDeltaX=DEFAULT_DELTA_X;
-		fDeltaY=DEFAULT_DELTA_Y;
-		fWidth=DEFAULT_WIDTH;
-		fHeight=DEFAULT_HEIGHT;
-		this.color=color;
+	public DynamicRectangleShape() {
+		super();
+		this.color=DEFAULT_COLOR;
 	}
 
+	public DynamicRectangleShape(Color color) {
+		super();
+		this.color=color;
+	}
 	/**
 	 * Creates a RectangleShape instance with specified values for instance
 	 * variables.
@@ -37,6 +36,12 @@ public class DynamicRectangleShape extends RectangleShape {
 	 */
 	public DynamicRectangleShape(int x, int y, int deltaX, int deltaY) {
 		super(x,y,deltaX,deltaY);
+		this.color=DEFAULT_COLOR;
+	}
+
+	public DynamicRectangleShape(int x, int y, int deltaX, int deltaY,Color color) {
+		super(x,y,deltaX,deltaY);
+		this.color=color;
 	}
 
 	/**
@@ -53,6 +58,15 @@ public class DynamicRectangleShape extends RectangleShape {
 	 */
 	public DynamicRectangleShape(int x, int y, int deltaX, int deltaY, int width, int height) {
 		super(x,y,deltaX,deltaY,width,height);
+		this.color=DEFAULT_COLOR;
+	}
+	public DynamicRectangleShape(int x, int y, int deltaX, int deltaY, int width, int height,Color color) {
+		super(x,y,deltaX,deltaY,width,height);
+		this.color=color;
+	}
+
+	public void changeStyle(){
+
 	}
 	
 	/**
@@ -60,6 +74,10 @@ public class DynamicRectangleShape extends RectangleShape {
 	 */
 	@Override
 	public void paint(Painter painter) {
+		painter.setColor(color);
 		painter.drawRect(fX,fY,fWidth,fHeight);
+
+//		painter.fillRect(fX,fY,fWidth,fHeight);
+
 	}
 }

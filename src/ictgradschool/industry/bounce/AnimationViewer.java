@@ -1,6 +1,6 @@
 package ictgradschool.industry.bounce;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -44,6 +44,8 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		shapes.add(new GemShape(40, 40, 4, 7));
 		shapes.add(new GemShape(60, 60, 9, 6,60,40));
 
+		shapes.add(new DynamicRectangleShape(Color.RED));
+		shapes.add(new DynamicRectangleShape(100, 0, 2, 3,Color.BLUE));
 		// TODO Add your own shapes here, once you've made them!
 
 		// Start the animation.
