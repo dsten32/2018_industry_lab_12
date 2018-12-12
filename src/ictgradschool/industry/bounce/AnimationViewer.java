@@ -40,6 +40,9 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		// Populate the list of Shapes.
 		shapes.add(new RectangleShape(0, 0, 2, 3));
 		shapes.add(new RectangleShape(10, 10, 5, 7));
+		shapes.add(new OvalShape(20, 20, 1, 4));
+		shapes.add(new GemShape(40, 40, 4, 7));
+		shapes.add(new GemShape(60, 60, 9, 6,60,40));
 
 		// TODO Add your own shapes here, once you've made them!
 
