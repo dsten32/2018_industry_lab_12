@@ -37,6 +37,8 @@ public abstract class Shape {
 
 	protected int fHeight;
 	// ===
+//	going to try adding boolean instance variables to record side and top/bottom hits.
+	boolean sideHit,topBotHit;
 
 	/**
 	 * Creates a Shape object with default values for instance variables.
@@ -72,7 +74,26 @@ public abstract class Shape {
 		fWidth = width;
 		fHeight = height;
 	}
-	
+
+//	getter/setters for Hit recorders.
+
+	public boolean isSideHit() {
+		return sideHit;
+	}
+
+	public boolean isTopBotHit() {
+		return topBotHit;
+	}
+
+	public void setSideHit(boolean sideHit) {
+		this.sideHit = sideHit;
+	}
+
+	public void setTopBotHit(boolean topBotHit) {
+		this.topBotHit = topBotHit;
+	}
+
+
 	/**
 	 * Moves this Shape object within the specified bounds. On hitting a
 	 * boundary the Shape instance bounces off and back into the two-
@@ -87,17 +108,25 @@ public abstract class Shape {
 		if (nextX <= 0) {
 			nextX = 0;
 			fDeltaX = -fDeltaX;
+			setSideHit(true);
+			setTopBotHit(false);
 		} else if (nextX + fWidth >= width) {
 			nextX = width - fWidth;
 			fDeltaX = -fDeltaX;
+			setSideHit(true);
+			setTopBotHit(false);
 		}
 
 		if (nextY <= 0) {
 			nextY = 0;
 			fDeltaY = -fDeltaY;
+			setSideHit(false);
+			setTopBotHit(true);
 		} else if (nextY + fHeight >= height) {
 			nextY = height - fHeight;
 			fDeltaY = -fDeltaY;
+			setSideHit(false);
+			setTopBotHit(true);
 		}
 
 		fX = nextX;

@@ -65,9 +65,7 @@ public class DynamicRectangleShape extends RectangleShape {
 		this.color=color;
 	}
 
-	public void changeStyle(){
 
-	}
 	
 	/**
 	 * Paints this RectangleShape object using the supplied Painter object.
@@ -76,6 +74,12 @@ public class DynamicRectangleShape extends RectangleShape {
 	public void paint(Painter painter) {
 		painter.setColor(color);
 		painter.drawRect(fX,fY,fWidth,fHeight);
+
+		if (this.sideHit){
+			painter.fillRect(fX,fY,fWidth,fHeight);
+		}else if (this.topBotHit){
+			painter.drawRect(fX,fY,fWidth,fHeight);
+		}
 
 //		painter.fillRect(fX,fY,fWidth,fHeight);
 
