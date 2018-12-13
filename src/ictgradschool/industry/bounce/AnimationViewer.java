@@ -91,7 +91,6 @@ public class AnimationViewer extends JPanel implements ActionListener {
         for(Shape s : shapes) {
             s.move(width, height);
         }
-
         // Request that the AnimationViewer repaints itself. The call to
         // repaint() will cause the AnimationViewer's paintComponent() to be
         // called.
@@ -110,7 +109,7 @@ public class AnimationViewer extends JPanel implements ActionListener {
                 frame.add(new AnimationViewer());
 
                 // Set window properties.
-                frame.setSize(500, 500);
+                frame.setSize(800, 800);
                 frame.setVisible(true);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             }
