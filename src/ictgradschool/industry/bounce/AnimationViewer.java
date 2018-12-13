@@ -38,15 +38,19 @@ public class AnimationViewer extends JPanel implements ActionListener {
 		shapes = new ArrayList<Shape>();
 	
 		// Populate the list of Shapes.
-		shapes.add(new RectangleShape(0, 0, 2, 3));
-		shapes.add(new RectangleShape(10, 10, 5, 7));
-		shapes.add(new OvalShape(20, 20, 1, 4));
-		shapes.add(new GemShape(40, 40, 4, 7));
-		shapes.add(new GemShape(60, 60, 9, 6,60,40));
+//		shapes.add(new RectangleShape(0, 0, 2, 3));
+//		shapes.add(new RectangleShape(10, 10, 5, 7));
+//		shapes.add(new OvalShape(20, 20, 1, 4));
+//
+//		// TODOne Add your own shapes here, once you've made them!
+//		shapes.add(new GemShape(40, 40, 4, 7));
+//		shapes.add(new GemShape(60, 60, 9, 6,60,40));
 
 		shapes.add(new DynamicRectangleShape(Color.RED));
 		shapes.add(new DynamicRectangleShape(100, 0, 2, 3,Color.BLUE));
-		// TODO Add your own shapes here, once you've made them!
+		shapes.add(new DynamicRectangleShape(50, 100, 3, 10));
+
+		shapes.add(new ImageShape(50, 100, 3, 10));
 
 		// Start the animation.
 		timer.start();

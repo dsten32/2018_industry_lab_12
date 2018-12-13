@@ -1,6 +1,7 @@
 package ictgradschool.industry.bounce;
 
 import java.awt.*;
+import java.awt.image.ImageObserver;
 import java.util.Arrays;
 
 /**
@@ -26,6 +27,10 @@ public class MockPainter implements Painter {
 		return log.toString();
 	}
 
+	@Override
+	public void drawImage(Image img, int x, int y, ImageObserver observer) {
+//		g.drawImage(img, x, y, observer);
+	}
 	/**
 	 * Logs the drawRect call.
 	 */

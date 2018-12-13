@@ -1,6 +1,7 @@
 package ictgradschool.industry.bounce;
 
 import java.awt.*;
+import java.awt.image.ImageObserver;
 
 /**
  * Implementation of the Painter interface that delegates drawing to a
@@ -58,4 +59,9 @@ public class GraphicsPainter implements Painter {
     public void fillRect(int x, int y, int width, int height) {
         g.fillRect(x, y, width, height);
     }
+
+	@Override
+    public void drawImage(Image img,int x, int y,ImageObserver observer) {
+		g.drawImage(img,x,y,observer);
+	}
 }

@@ -1,6 +1,7 @@
 package ictgradschool.industry.bounce;
 
 import java.awt.*;
+import java.awt.image.ImageObserver;
 
 /** 
  * Interface to represent a type that offers primitive drawing methods.
@@ -42,6 +43,8 @@ public interface Painter {
      * @param polygon
      */
     public void drawPolygon(Polygon polygon);
+
+	public void drawImage(Image img, int x, int y, ImageObserver observer);
 
     /**
      * Draws a filled rectangle.
