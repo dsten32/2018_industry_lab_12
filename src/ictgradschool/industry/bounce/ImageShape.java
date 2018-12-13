@@ -1,11 +1,12 @@
 package ictgradschool.industry.bounce;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 import java.io.File;
 import java.io.IOException;
 
@@ -21,7 +22,6 @@ public class ImageShape extends Shape {
 		image = ImageIO.read(new File("s-l300.jpg"));
 		fWidth = image.getWidth();
 		fHeight = image.getHeight();
-
 	}
 
 	/**
@@ -30,6 +30,11 @@ public class ImageShape extends Shape {
 	 */
 	public ImageShape() {
 		super();
+		try {
+			loadImage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -42,6 +47,11 @@ public class ImageShape extends Shape {
 	 */
 	public ImageShape(int x, int y, int deltaX, int deltaY) {
 		super(x,y,deltaX,deltaY);
+		try {
+			loadImage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -58,6 +68,11 @@ public class ImageShape extends Shape {
 	 */
 	public ImageShape(int x, int y, int deltaX, int deltaY, int width, int height) {
 		super(x,y,deltaX,deltaY,width,height);
+		try {
+			loadImage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 //	public void paint(GraphicsPainter painter) {
@@ -70,7 +85,6 @@ public class ImageShape extends Shape {
 	@Override
 	public void paint(Painter painter) {
 		painter.drawImage(image,fX,fY,null);
-//		painter.drawRect(fX,fY,fWidth,fHeight);
 	}
 
 

@@ -75,15 +75,6 @@ public abstract class Shape {
 		fHeight = height;
 	}
 
-//	getter/setters for Hit recorders.
-
-	public boolean isSideHit() {
-		return sideHit;
-	}
-
-	public boolean isTopBotHit() {
-		return topBotHit;
-	}
 
 	public void setSideHit(boolean sideHit) {
 		this.sideHit = sideHit;
